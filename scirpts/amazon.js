@@ -41,7 +41,7 @@ products.forEach((product)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-to-cart-${product.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -53,6 +53,8 @@ products.forEach((product)=>{
 
        });
 document.querySelector('.js-products-grid').innerHTML=productsHTML;
+ // save timeoutids by object b/c each product its own timeoutId.
+const addedMessageTimeouts={};
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
 button.addEventListener('click',()=>{
   //console.log('add to cart');
@@ -86,6 +88,18 @@ button.addEventListener('click',()=>{
   cartQuantity+=item.quantity
  });
  document.querySelector('.js-cart-quantity').innerHTML=cartQuantity; 
+
+  const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+  addedMessage.classList.add('added-to-cart-visible');
+  const previousTimeId= addedMessageTimeouts[productId];
+  if(previousTimeId){
+    clearTimeout(previousTimeId);
+  }
+
+  const timeoutId = setTimeout(()=>{
+    addedMessage.classList.remove('added-to-cart-visible');
+  },2000);
+  addedMessageTimeouts[previousTimeId]= timeoutId;
 });
 });
  
