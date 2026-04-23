@@ -18,7 +18,7 @@ export function renderPaymentSummary(){
   
   const taxCents=totalBeforeTaxCents* 0.1;
   
-  const totalCents= totalBeforeTaxCents+taxCents;
+  const totalCents= totalBeforeTaxCents + taxCents;
   
 
    const paymentSummaryHTML=`
@@ -52,7 +52,7 @@ export function renderPaymentSummary(){
       <div class="payment-summary-row total-row">
         <div>Order total:</div>
         <div class="payment-summary-money">
-        $${formatCurrency(taxCents)}
+        $${formatCurrency(totalCents)}
         </div>
       </div>
 
