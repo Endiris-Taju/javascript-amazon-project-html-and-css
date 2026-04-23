@@ -13,14 +13,13 @@ export function renderPaymentSummary(){
  const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
  shippingPriceCents+= deliveryOption.priceCents;
   });
- console.log(productPriceCents);
-  console.log(shippingPriceCents);
+
   const totalBeforeTaxCents=productPriceCents+shippingPriceCents;
-   console.log(totalBeforeTaxCents);
+  
   const taxCents=totalBeforeTaxCents* 0.1;
-   console.log(taxCents);
+  
   const totalCents= totalBeforeTaxCents+taxCents;
-   console.log(totalCents);
+  
 
    const paymentSummaryHTML=`
     
