@@ -17,10 +17,10 @@ function getWorkingDaysDiff(startDate, endDate) {
   let current = dayjs(startDate);
 
   while (current.isBefore(endDate, 'day')) {
-    const day = current.day(); // 0 = Sun, 6 = Sat
+    const day = current.day(); 
 
     if (day !== 0 && day !== 6) {
-      count++; // only Mon-Fri
+      count++; 
     }
 
     current = current.add(1, 'day');
