@@ -1,4 +1,5 @@
-
+import { renderAmazonHeader } from "../shared/amazonHeader.js";
+import { updateCartQuantityUI } from "../shared/cartUI.js";
 import { addToCart } from "../../data/cart.js";
 import { orders } from "../../data/orders.js";
 import { getProduct } from "../../data/products.js";
@@ -104,12 +105,12 @@ document.querySelectorAll('.js-buy-again-button')
       setTimeout(() => {
         message.classList.remove('visible');
       }, 1000);
-    //updateCartQuantityUI();
+    updateCartQuantityUI();
     });
   });
   
 }
-//renderAmazonHeader();
+renderAmazonHeader();
 renderOrders();
 
 
