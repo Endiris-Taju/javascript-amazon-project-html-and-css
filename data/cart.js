@@ -29,7 +29,7 @@ if(!cart){
 
       const quantitySelector= document.querySelector(`.js-quantity-selector-${productId}`);
 
-      const quantity= Number(quantitySelector.value);
+      const quantity= quantitySelector ? Number(quantitySelector.value):1;
 
       if(matchingItem){
         matchingItem.quantity +=quantity;

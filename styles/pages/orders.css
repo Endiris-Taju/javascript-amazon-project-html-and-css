@@ -81,6 +81,7 @@
 }
 
 .order-details-grid {
+  position: relative;
   padding: 40px 25px;
   border: 1px solid rgb(213, 217, 217);
   border-top: none;
@@ -212,4 +213,17 @@
     width: 100%;
     padding: 12px;
   }
+}
+.js-added-to-cart-message {
+  position: absolute;
+  color: green;
+  font-size: 15px;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  left: 305px;
+}
+
+.js-added-to-cart-message.visible {
+  opacity: 1;
 }
