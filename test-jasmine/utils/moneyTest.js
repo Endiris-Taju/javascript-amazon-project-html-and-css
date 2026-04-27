@@ -1,4 +1,4 @@
-import { formatCurrency } from "../scirpts/utils/money.js";
+import { formatCurrency } from "../../scirpts/utils/money.js";
 describe('test suit: formatCurrency', ()=>{
   it('convert dollars to cents',()=>{
     expect(formatCurrency(2095)).toEqual('20.95')
